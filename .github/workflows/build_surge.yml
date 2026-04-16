@@ -1,0 +1,41 @@
+name: Build Surge Config
+
+on:
+  push:
+    paths:
+      - 'Modules/**'
+      - 'SurgeTemplate.conf'
+      - 'build.sh'
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Build Surge_Final.conf
+        env:
+          SURGE_SUB_URL: ${{ secrets.SURGE_SUB_URL }}
+        run: |
+          chmod +x build.sh
+          ./build.sh
+          
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add Surge_Final.conf
+          
+          # 只有当 Surge_Final.conf 发生变化时才提交
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-generate Surge_Final.conf"
+            git push
+          else
+            echo "No changes detected in Surge_Final.conf."
+          fi
