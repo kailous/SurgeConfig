@@ -16,6 +16,14 @@ https://kailous.github.io/SurgeConfig/Modules/FigmaZhCn.sgmodule
 
 模块只托管 URL Rewrite 和 MITM hostname。`ca-p12` 和 `ca-passphrase` 属于本机 MITM CA 私钥，请保留在自己的 Surge 配置里，不要公开提交到仓库。
 
+### FigmaEX 增强
+
+```text
+https://kailous.github.io/SurgeConfig/Modules/FigmaEX.sgmodule
+```
+
+模块会在 Figma 页面响应中注入托管版 FigmaEX `app.js`。这个版本不依赖 Chrome 扩展 API，但仍需要启用 Surge MITM，且 Figma 页面结构或安全策略变更时可能需要调整注入方式。
+
 ### 自定义分流规则
 
 ```text

@@ -1,0 +1,13 @@
+#!name=FigmaEX 增强
+#!desc=将 FigmaEX 增强脚本注入 Figma 网页版和 Figma 客户端。脚本来自 FigmaEX Chrome 扩展的 app.js，并以普通页面脚本方式运行。
+#!category=RainForest
+#!author=kailous
+#!homepage=https://github.com/kailous/SurgeConfig
+
+[Script]
+FigmaEX 增强注入 = type=http-response,pattern=^https:\/\/(www\.)?figma\.com\/,requires-body=true,max-size=5242880,script-path=https://kailous.github.io/SurgeConfig/Scripts/FigmaEXInject.js
+
+[MITM]
+skip-server-cert-verify = true
+h2 = true
+hostname = %APPEND% figma.com, www.figma.com
