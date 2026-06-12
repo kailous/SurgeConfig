@@ -1,5 +1,6 @@
 #!name=Figma 中文汉化
 #!desc=将 Figma 网页版语言包重写到中文 JSON。MITM CA 证书请保留在本机 Surge 配置中，不要公开托管。
+#!category=RainForest
 #!author=kailous
 #!homepage=https://github.com/kailous/SurgeConfig
 

@@ -1,5 +1,6 @@
 #!name=自定义分流规则
 #!desc=按用途分类的常用服务分流规则，包含设计创作、流媒体、AI 服务、设计灵感和小红书推送。
+#!category=RainForest
 #!author=kailous
 #!homepage=https://github.com/kailous/SurgeConfig
 
