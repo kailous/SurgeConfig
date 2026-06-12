@@ -1,4 +1,5 @@
 const FIGMA_EX_SCRIPT_URL = "https://kailous.github.io/SurgeConfig/Assets/FigmaEX/app.js";
+const FIGMA_EX_FIX_CSS_URL = "https://kailous.github.io/SurgeConfig/Assets/FigmaEX/figmaex-fix.css";
 const INJECT_MARKER = "data-rainforest-figmaex";
 
 function getHeader(headers, name) {
@@ -25,14 +26,16 @@ function injectScript(body) {
     return body;
   }
 
+  const styleTag = `<link ${INJECT_MARKER}-style="true" rel="stylesheet" href="${FIGMA_EX_FIX_CSS_URL}">`;
   const scriptTag = `<script ${INJECT_MARKER}="true" src="${FIGMA_EX_SCRIPT_URL}" defer></script>`;
+  const tags = `${styleTag}${scriptTag}`;
 
   if (/<\/head>/i.test(body)) {
-    return body.replace(/<\/head>/i, `${scriptTag}</head>`);
+    return body.replace(/<\/head>/i, `${tags}</head>`);
   }
 
   if (/<body/i.test(body)) {
-    return body.replace(/<body([^>]*)>/i, `<body$1>${scriptTag}`);
+    return body.replace(/<body([^>]*)>/i, `<body$1>${tags}`);
   }
 
   return body;
