@@ -5,7 +5,7 @@
 #!homepage=https://github.com/kailous/SurgeConfig
 
 [Script]
-FigmaEX 增强注入 = type=http-response,pattern=^https:\/\/(www\.)?figma\.com\/,requires-body=true,max-size=5242880,script-path=https://kailous.github.io/SurgeConfig/Scripts/FigmaEXInject.js
+FigmaEX 增强注入 = type=http-response,pattern=^https:\/\/(www\.)?figma\.com\/($|file\/|design\/|proto\/|board\/|slides\/|community\/|files\/|login|signup),requires-body=true,max-size=5242880,script-path=https://kailous.github.io/SurgeConfig/Scripts/FigmaEXInject.js
 
 [MITM]
 skip-server-cert-verify = true
