@@ -1,13 +1,7 @@
-[Proxy Group]
-# 自定义策略组
-Adobe = select, PROXY, DIRECT
-Figma = select, PROXY, DIRECT
-Behance = select, PROXY, DIRECT
-Spotify = select, PROXY, DIRECT
-🤖Grok = select, PROXY, DIRECT
-awwwards = select, PROXY, DIRECT
-Claude = select, PROXY, DIRECT
-小红书 = select, PROXY, DIRECT
+#!name=Custom Routing Rules
+#!desc=Routing rules for Adobe, Figma, Behance, Spotify, Grok, awwwards, Claude, and Xiaohongshu.
+#!author=kailous
+#!homepage=https://github.com/kailous/SurgeConfig
 
 [Rule]
 # Adobe
@@ -39,9 +33,9 @@ DOMAIN-SUFFIX,gae2-dealer2.spotify.com,Spotify
 DOMAIN-SUFFIX,spotify.com,Spotify
 
 # Grok
-DOMAIN-SUFFIX,grok.com,Grok
-DOMAIN-SUFFIX,api.x.ai,Grok
-DOMAIN-SUFFIX,x.com,Grok
+DOMAIN-SUFFIX,grok.com,🤖Grok
+DOMAIN-SUFFIX,api.x.ai,🤖Grok
+DOMAIN-SUFFIX,x.com,🤖Grok
 
 # awwwards
 DOMAIN-SUFFIX,awwwards.com,awwwards
@@ -55,3 +49,12 @@ DOMAIN-SUFFIX,statsig.com,Claude
 DOMAIN-SUFFIX,featuregates.org,Claude
 DOMAIN-SUFFIX,api.github.com,Claude
 DOMAIN-SUFFIX,raw.githubusercontent.com,Claude
+
+# Xiaohongshu
+DOMAIN,apppush-overseas.xiaohongshu.com,小红书
+DOMAIN,apppush.xiaohongshu.com,小红书
+DOMAIN,apppush-hz.xiaohongshu.com,小红书
+DOMAIN,apppush-sh5.xiaohongshu.com,小红书
+DOMAIN,apppush-rts.xiaohongshu.com,小红书
+DOMAIN,dc.xiaohongshu.com,小红书
+DOMAIN,ark.xiaohongshu.com,小红书
