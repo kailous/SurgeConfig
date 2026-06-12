@@ -1,5 +1,5 @@
-#!name=Figma zh-CN Localized
-#!desc=Redirect Figma web app language bundle to zh-CN localized JSON. Keep your MITM CA certificate configured locally in Surge.
+#!name=Figma 中文汉化
+#!desc=将 Figma 网页版语言包重写到中文 JSON。MITM CA 证书请保留在本机 Surge 配置中，不要公开托管。
 #!author=kailous
 #!homepage=https://github.com/kailous/SurgeConfig
 
